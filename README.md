@@ -1,10 +1,8 @@
-# Astro Portfolio Site
+# Portfolio Site
 
-My Simple Portfolio Site
+My Simple Portfolio Site built with Astro!
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
+## Commands
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |

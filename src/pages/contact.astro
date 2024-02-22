@@ -1,7 +1,14 @@
 ---
 import Navigation from '../components/Navigation.astro';
 
-const Title = 'Contact'
+const title = 'Contact'
+
+const about = {
+	firstName: 'Alec',
+	lastName: 'van Dijken',
+	phoneNumber: '+1 (123)-456-7543'
+}
+const skills = ["HTML", "CSS", "JavaScript", "Vue", "Astro", "Rock Climbing"];
 ---
 <html lang="en">
 	<head>
@@ -9,10 +16,16 @@ const Title = 'Contact'
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>AlecVD/{Title}</title>
+		<title>AlecVD/{title}</title>
 	</head>
     <body>
         <Navigation/>
         <h1>Contact Page</h1>
+		<h2>My name is {about.firstName +' '+ about.lastName}</h2>
+
+		<p>Skills:</p>
+		<ul>
+			{skills.map((skill) => <li>{skill}</li>)}
+		</ul>
     </body>
 </html>

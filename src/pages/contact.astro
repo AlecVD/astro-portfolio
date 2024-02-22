@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 
 const title = 'Contact'
@@ -9,6 +10,7 @@ const about = {
 	phoneNumber: '+1 (123)-456-7543'
 }
 const skills = ["HTML", "CSS", "JavaScript", "Vue", "Astro", "Rock Climbing"];
+const skillColor = "navy";
 ---
 <html lang="en">
 	<head>
@@ -18,6 +20,16 @@ const skills = ["HTML", "CSS", "JavaScript", "Vue", "Astro", "Rock Climbing"];
 		<meta name="generator" content={Astro.generator} />
 		<title>AlecVD/{title}</title>
 	</head>
+	<style define:vars={{skillColor}}>
+		h1 {
+		  color: purple;
+		  font-size: 4rem;
+		}
+		.skill {
+		  color: var(--skillColor);
+		  font-weight: bold;
+		}
+	  </style>
     <body>
         <Navigation/>
         <h1>Contact Page</h1>
@@ -25,7 +37,7 @@ const skills = ["HTML", "CSS", "JavaScript", "Vue", "Astro", "Rock Climbing"];
 
 		<p>Skills:</p>
 		<ul>
-			{skills.map((skill) => <li>{skill}</li>)}
+			{skills.map((skill) => <li class="skill">{skill}</li>)}
 		</ul>
     </body>
 </html>

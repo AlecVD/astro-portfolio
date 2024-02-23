@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
+import Header from '../components/Header.astro';
 
 const title = 'Contact'
 
@@ -21,17 +21,13 @@ const skillColor = "navy";
 		<title>AlecVD/{title}</title>
 	</head>
 	<style define:vars={{skillColor}}>
-		h1 {
-		  color: purple;
-		  font-size: 4rem;
-		}
 		.skill {
 		  color: var(--skillColor);
 		  font-weight: bold;
 		}
 	  </style>
     <body>
-        <Navigation/>
+        <Header/>
         <h1>Contact Page</h1>
 		<h2>My name is {about.firstName +' '+ about.lastName}</h2>
 

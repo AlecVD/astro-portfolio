@@ -1,39 +1,28 @@
 ---
-import '../styles/global.css';
-import Header from '../components/Header.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-const title = 'Contact'
+const pageTitle = "Contact";
 
 const about = {
-	firstName: 'Alec',
-	lastName: 'van Dijken',
-	phoneNumber: '+1 (123)-456-7543'
-}
+  firstName: "Alec",
+  lastName: "van Dijken",
+  phoneNumber: "+1 (123)-456-7543",
+};
 const skills = ["HTML", "CSS", "JavaScript", "Vue", "Astro", "Rock Climbing"];
 const skillColor = "navy";
 ---
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>AlecVD/{title}</title>
-	</head>
-	<style define:vars={{skillColor}}>
-		.skill {
-		  color: var(--skillColor);
-		  font-weight: bold;
-		}
-	  </style>
-    <body>
-        <Header/>
-        <h1>Contact Page</h1>
-		<h2>My name is {about.firstName +' '+ about.lastName}</h2>
 
-		<p>Skills:</p>
-		<ul>
-			{skills.map((skill) => <li class="skill">{skill}</li>)}
-		</ul>
-    </body>
-</html>
+<style define:vars={{ skillColor }}>
+  .skill {
+    color: var(--skillColor);
+    font-weight: bold;ß
+  }
+</style>
+<BaseLayout pageTitle="pageTitle">
+  <h1>Contact Page</h1>
+  <h2>My name is {about.firstName + " " + about.lastName}</h2>
+  <p>Skills:</p>
+  <ul>
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
+  </ul>
+</BaseLayout>

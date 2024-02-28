@@ -1,42 +1,6 @@
-html {
-  background-color: #ffffff;
-  font-family: sans-serif;
+h1{
+  size: 100em;
 }
-
-html.dark {
-  background-color: #30303c;
-  color: #fff;
-}
-
-.dark a {
-  color: #fff;
-}
-
-a {
-  text-decoration: inherit;
-  color: #30303c;
-}
-
-.dark .nav-icon {
-  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(75deg) brightness(108%)
-    contrast(101%);
-}
-.nav-icon {
-  filter: invert(13%) sepia(3%) saturate(4536%) hue-rotate(202deg)
-    brightness(96%) contrast(84%);
-}
-
-body {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
-  line-height: 1.5;
-}
-
-nav {
-  display: flex;
-}
-.nav-links{
-  border: solid black;
+h2{
+  size: 30em
 }

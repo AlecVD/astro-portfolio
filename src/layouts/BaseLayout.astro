@@ -16,9 +16,8 @@ const {pageTitle} = Astro.props;
 		<title>AlecVD/{pageTitle}</title>
 		<ViewTransitions/>
 	</head>
-	<body>
+	<body class="wrapper">
 		<Header/>
-		<h1>{pageTitle}</h1>
 		<slot/>
 		<Footer/>
 		<script>

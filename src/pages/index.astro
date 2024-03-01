@@ -4,5 +4,28 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 const pageTitle = 'Home'
 ---
 <BaseLayout pageTitle={pageTitle}>
-	<h2>My Home Page</h2>
+	<div class="card">
+		<div class="stack">
+			<h1>Alec van Dijken</h1>
+			<p>Sunnyvale, CA</p>
+		</div>
+	</div>
 </BaseLayout>
+<style>
+	.card{
+		margin: auto;
+		width: fit-content;
+		background-color: var(--background-color-alt);
+		border-style: solid;
+        border-color: var(--border-color);
+        border-width: 1px;
+        border-radius: 1.5em;
+		padding: 1em;
+	}
+	.stack{
+		margin-top: 0px;
+	}
+	h1{
+		margin:0px;
+	}
+</style>

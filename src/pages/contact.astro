@@ -12,16 +12,18 @@ const skills = ["HTML", "CSS", "JavaScript", "Vue", "Astro", "Rock Climbing"];
 const skillColor = "navy";
 ---
 
+<BaseLayout pageTitle={pageTitle}>
+  <div class="card">
+    <h2>My name is {about.firstName + " " + about.lastName}</h2>
+    <p>Skills:</p>
+    <ul>
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
+    </ul>
+  </div>
+</BaseLayout>
 <style define:vars={{ skillColor }}>
   .skill {
     color: var(--skillColor);
     font-weight: bold;ß
   }
 </style>
-<BaseLayout pageTitle={pageTitle}>
-  <h2>My name is {about.firstName + " " + about.lastName}</h2>
-  <p>Skills:</p>
-  <ul>
-    {skills.map((skill) => <li class="skill">{skill}</li>)}
-  </ul>
-</BaseLayout>

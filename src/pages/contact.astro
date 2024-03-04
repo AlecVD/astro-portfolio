@@ -8,22 +8,83 @@ const about = {
   lastName: "van Dijken",
   phoneNumber: "+1 (123)-456-7543",
 };
-const skills = ["HTML", "CSS", "JavaScript", "Vue", "Astro", "Rock Climbing"];
+const skills = ["HTML", "CSS", "Typescript", "Vue", "Astro",];
 const skillColor = "navy";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class="card">
-    <h2>My name is {about.firstName + " " + about.lastName}</h2>
-    <p>Skills:</p>
-    <ul>
-      {skills.map((skill) => <li class="skill">{skill}</li>)}
-    </ul>
+  <div class="stack">
+    <div class="card stack">
+      <div class="secondlayer">
+        <h1>My name is {about.firstName + " " + about.lastName}</h1>
+        <p>I am a passionate web developer based in the Bay Area!</p>
+      </div>
+      <div class="skills">
+        {skills.map((skill) => <p class="skill secondlayer">{skill}</p>)}
+      </div>
+    </div>
+    <div class="stack">
+      <!-- <div class="secondlayer projects-title">
+        <h1>Projects</h1>
+      </div> -->
+      <div class="projects">
+        <div>
+          <div class="project-item etch">
+            <img src="../etchthumbnail.png" alt="">
+            <div class="secondlayer">
+              <h2>Etch-a-Sketch</h2>
+              <p>A fun drawing project with HTML CSS JS. Built while completing the Odin Project!</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="project-item foto">
+            <img src="../fotothumbnail.png" alt="">
+            <div class="secondlayer">
+                <h2>Foto</h2>
+                <p>A fast photography website built with HTML CSS JS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </BaseLayout>
 <style define:vars={{ skillColor }}>
+  .skills{
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+  }
   .skill {
-    color: var(--skillColor);
+    color: var(--text-color-alt);
     font-weight: bold;ß
+  }
+  .projects-title{
+    align-self: center;
+    width: fit-content;
+  }
+  .projects{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+  }
+  .project-item{
+    background-color: var(--background-color-alt);
+    border-style: solid;
+    border-color: var(--border-color);
+    border-width: 1px;
+    border-radius: 1.5em;
+    padding: 1em;
+  }
+  .project-item div{
+    max-width: fit-content;
+  }
+  .etch{
+    max-width: 22em;
+  }
+  img{
+    height: 20em;
+    padding:1em
   }
 </style>

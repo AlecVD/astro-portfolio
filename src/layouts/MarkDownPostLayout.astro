@@ -1,35 +1,84 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-const {frontmatter} = Astro.props;
+const { frontmatter } = Astro.props;
+
+const allPosts = await Astro.glob("../pages/posts/*.md");
+const filteredPosts = allPosts.map((post) => post.url);
+const a = filteredPosts.indexOf(Astro.url.pathname);
+
+var nextPost;
+var lastPost;
+
+if (typeof filteredPosts[a + 1] !== "undefined") {
+  nextPost = filteredPosts[a + 1];
+} else {
+  // nextPost = Astro.url.pathname;
+}
+if (typeof filteredPosts[a - 1] !== "undefined") {
+  lastPost = filteredPosts[a - 1];
+} else {
+  // lastPost = Astro.url.pathname;
+}
 ---
+
 <BaseLayout pageTitle={frontmatter.title}>
-    <p>{frontmatter.pubDate.toString().slice(0,10)}</p>
-    <img src={frontmatter.image.url} width="30%" alt={frontmatter.image.alt}>
-    <div class="tags">
+  <div class="card">
+    <div class="controls">
+      {
+        nextPost && (
+          <div class="secondlayer blogbutton">
+            <a href={nextPost}>Next</a>
+          </div>
+        )
+      }
+      {
+        lastPost && (
+          <div class="secondlayer blogbutton">
+            <a href={lastPost}>Last</a>
+          </div>
+        )
+      }
+    </div>
+
+    <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
+    <img src={frontmatter.image.url} width="30%" alt={frontmatter.image.alt} />
+    <!-- <div class="tags">
         {frontmatter.tags.map((tag: string) => (
           <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
         ))}
-    </div>
+    </div> -->
     <p>{frontmatter.description}</p>
     <p>By: {frontmatter.author}</p>
     <slot />
+  </div>
 </BaseLayout>
 <style>
-    a {
-      color: #00539F;
-    }
-  
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-    }
-  
-    .tag {
-      margin: 0.25em;
-      border: dotted 1px #a1a1a1;
-      border-radius: .5em;
-      padding: .5em 1em;
-      font-size: 1.15em;
-      background-color: #F8FCFD;
-    }
-  </style>
+  a {
+    color: #00539f;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .controls{
+    display: flex;
+    justify-content: end;
+    gap: 1em;
+  }
+  .tag {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    font-size: 1.15em;
+    background-color: #f8fcfd;
+  }
+  .blogbutton{
+    width: fit-content;
+  }
+  .blogbutton a{
+    text-decoration: none;
+    color: var(--text-color-alt);
+  }
+</style>

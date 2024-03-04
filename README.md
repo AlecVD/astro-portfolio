@@ -2,6 +2,8 @@
 
 My Simple Portfolio Site built with Astro!
 
+https://alecvd.netlify.app
+
 ## Commands
 
 | Command                   | Action                                           |

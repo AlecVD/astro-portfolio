@@ -1,13 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-
+import { Image } from "astro:assets";
+import profilepic from "../assets/profilepic.png"
 const pageTitle = 'Home'
 ---
 <BaseLayout pageTitle={pageTitle}>
 	<div class="card">
 		<div class="stack">
 			<div class="picturerow secondlayer">
-				<img id="profilepic"src="../profilepic.png"/>
+				<Image src={profilepic} width=64 height=64 alt="" quality="high"/>
 				<div>
 					<h2>Alec van Dijken</h2>
 					<p>Designer / Developer</p>

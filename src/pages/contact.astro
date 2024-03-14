@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
 
 const pageTitle = "Contact";
 
@@ -10,6 +11,9 @@ const about = {
 };
 const skills = ["HTML", "CSS", "Typescript", "Vue", "Astro",];
 const skillColor = "navy";
+
+import etchThumbnail from '../assets/etchthumbnail.png';
+import fotoThumbnail from '../assets/fotothumbnail.png';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -30,7 +34,7 @@ const skillColor = "navy";
       <div class="projects">
         <div>
           <div class="project-item etch">
-            <img src="../etchthumbnail.png" alt="">
+            <Image src={etchThumbnail} class="thumbnail-image" alt=""/>
             <div class="secondlayer">
               <h2>Etch-a-Sketch</h2>
               <p>A fun drawing project with HTML CSS JS. Built while completing the Odin Project!</p>
@@ -39,7 +43,7 @@ const skillColor = "navy";
         </div>
         <div>
           <div class="project-item foto">
-            <img src="../fotothumbnail.png" alt="">
+            <Image src={fotoThumbnail} class="thumbnail-image" alt=""/>
             <div class="secondlayer">
                 <h2>Foto</h2>
                 <p>A fast photography website built with HTML CSS JS</p>
@@ -83,8 +87,9 @@ const skillColor = "navy";
   .etch{
     max-width: 22em;
   }
-  img{
+  .thumbnail-image{
     height: 20em;
+    width: auto;
     padding:1em
   }
 </style>

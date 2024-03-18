@@ -21,7 +21,7 @@
   --text-color-alt: rgba(38, 52, 88, 1);
 }
 .background {
-  background-image: url("../assets/background.jpg");
+  background-image: url("../assets/background.JPG");
   background-size: cover;
   background-position: bottom;
 }
